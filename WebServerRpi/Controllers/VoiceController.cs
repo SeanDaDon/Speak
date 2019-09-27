@@ -20,18 +20,22 @@ namespace WebServerRpi.Controllers
         {
             ViewBag.Id = id;
             ViewBag.Name = name;
+            
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+
+            string payLoad = $" -i yo -a {id}";
             try
             {
-                Process process = new Process();
-                ProcessStartInfo startInfo = new ProcessStartInfo();
-                startInfo.UseShellExecute = false;
-                startInfo.RedirectStandardOutput = true;
-                startInfo.FileName = @"usr/bin/python";
-                startInfo.Arguments = @"home/pi/test/python motorScript.py -i yo -a 1";
+                startInfo.FileName = @"/usr/bin/python";
+                //startInfo.Arguments = @"/home/pi/test/motorScript.py -i yo -a 1";
+                startInfo.Arguments = @"/home/pi/test/motorScript.py" + payLoad;
                 process.StartInfo = startInfo;
                 process.Start();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 //Implement some form of logging...
                 return View("Index");
