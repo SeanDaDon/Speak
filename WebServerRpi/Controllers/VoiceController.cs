@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -30,7 +27,6 @@ namespace WebServerRpi.Controllers
             try
             {
                 startInfo.FileName = @"/usr/bin/python";
-                //startInfo.Arguments = @"/home/pi/test/motorScript.py -i yo -a 1";
                 startInfo.Arguments = @"/home/pi/test/motorScript.py" + payLoad;
                 process.StartInfo = startInfo;
                 process.Start();
