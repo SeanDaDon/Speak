@@ -9,7 +9,7 @@ namespace WebServerRpi.Controllers
 
         public IActionResult Voice()
         {
-            return View();
+            return View("test");
         }
 
         [HttpGet]
