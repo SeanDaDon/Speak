@@ -23,19 +23,12 @@ button:focus {
 }
 
 .page-description {
-    font-size: 1.1rem;
-    margin: 0 auto;
-}
 
-.tz-link {
-    font-size: 1em;
-    color: #1da7da;
-    text-decoration: none;
+    margin: 0 auto;
 }
 
 .no-browser-support {
     display: none;
-    font-size: 1.2rem;
     color: #e64427;
     margin-top: 35px;
 }
@@ -82,10 +75,6 @@ button:focus {
     }
 
 }   
-
-
-
-/* -- Demo ads -- */
 
 @media (max-width: 1200px) {
     #bsaHolder{ display:none;}
