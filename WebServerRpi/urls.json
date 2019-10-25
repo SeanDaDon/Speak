@@ -1,4 +1,4 @@
 {
-  "server.urls":  "http://localhost:5001"
+  "server.urls":  "http://raspberrypi:5001"
 }
 
