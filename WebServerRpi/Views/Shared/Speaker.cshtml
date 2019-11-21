@@ -4,8 +4,19 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<p>Click a button to output that phrase to the speaker</p>
-<button>"Good Job"</button>
+<p>Click a link below to output that phrase to the speaker</p>
+@*<button> "Good Job"</button>
 <button>"Try again"</button>
 <button>"You're doing great"</button>
-<button>"Almost got it"</button>
+<button>"Almost got it"</button>*@
+
+@*<input type="button" value="Go Somewhere Else" onclick="location.href='<%: @Url.Action("Submit","TTS", new { id=1 } ) %>'" />*@
+
+<a href="@Url.Action("Submit", "TTS", new { id = 1 })"> Good Job</a>
+<br>
+<a href="@Url.Action("Submit", "TTS", new { id = 2 })"> Try Again</a>
+<br>
+<a href="@Url.Action("Submit", "TTS", new { id = 3 })"> You're doing great</a>
+<br>
+<a href="@Url.Action("Submit", "TTS", new { id = 4 })"> Almost got it</a>
+
