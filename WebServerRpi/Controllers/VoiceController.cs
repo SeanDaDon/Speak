@@ -13,21 +13,20 @@ namespace WebServerRpi.Controllers
         }
 
         [HttpGet]
-        public ActionResult Submit(int id, string name)
+        public ActionResult Submit(int id)
         {
             ViewBag.Id = id;
-            ViewBag.Name = name;
             
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.UseShellExecute = false;
             startInfo.RedirectStandardOutput = true;
 
-            string payLoad = $" -i yo -a {id}";
+            string payLoad = $" -a {id}";
             try
             {
                 startInfo.FileName = @"/usr/bin/python";
-                startInfo.Arguments = @"/home/pi/test/motorScript.py" + payLoad;
+                startInfo.Arguments = @"/home/pi/teamSpeak/motorScript.py" + payLoad;
                 process.StartInfo = startInfo;
                 process.Start();
             }

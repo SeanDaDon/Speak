@@ -3,7 +3,7 @@
 }
 
 
-<h3><b>Forms - HTTPGET Method</b></h3>
+<h3><b>Test</b></h3>
 @using (Html.BeginForm("Submit", "Voice", FormMethod.Get))
 {
     <table>
@@ -12,15 +12,10 @@
             <td>@Html.TextBox("Id")</td>
         </tr>
         <tr>
-            <td>Enter Name: </td>
-            <td>@Html.TextBox("Name")</td>
-        </tr>
-        <tr>
             <td colspan="2"><input type="submit" value="Submit"></td>
         </tr>
     </table>
 }
 <h4 style="color:purple">
     ID: @ViewBag.Id<br />
-    Name: @ViewBag.Name<br />
 </h4>
