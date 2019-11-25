@@ -2,21 +2,14 @@
     ViewData["Title"] = "Voice";
 }
 
-
-<h3><b>Press Begin to Signal the Toy</b></h3>
+<h3><b>Press 'Microphone' to command the toy through voice inputs</b></h3>
 @using (Html.BeginForm("Submit", "Voice", new { id = 1 }, FormMethod.Get))
 {
-    int value = 0;
-    <table>
-        @*<tr>
-            <td>Enter ID: </td>
-            <td>@Html.TextBox("Id")</td>
-        </tr>*@
-        <tr>
-            <td colspan="2"><input type="submit" value="Submit"></td>
-        </tr>
-    </table>
+    <input type="submit" value="Microphone">
 }
-<h4 style="color:purple">
-    ID: @ViewBag.Id<br />
-</h4>
+
+<h3><b>Press 'Pressure Sensor' to command the toy with pressure sensor inputs</b></h3>
+@using (Html.BeginForm("Submit", "Voice", new { id = 2 }, FormMethod.Get))
+{
+    <input type="submit" value="Pressure Sensor">
+}

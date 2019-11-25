@@ -6,7 +6,6 @@ namespace WebServerRpi.Controllers
 {
     public class VoiceController : Controller
     {
-
         public IActionResult Voice()
         {
             return View();
@@ -15,7 +14,6 @@ namespace WebServerRpi.Controllers
         [HttpGet]
         public ActionResult Submit(int id)
         {
-            ViewBag.Id = id;
             
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
@@ -26,17 +24,15 @@ namespace WebServerRpi.Controllers
             try
             {
                 startInfo.FileName = @"/usr/bin/python";
-                startInfo.Arguments = @"/home/pi/teamSpeak/motorScript.py" + payLoad;
+                startInfo.Arguments = @"/home/pi/teamSpeak/speakerScript.py" + payLoad;
                 process.StartInfo = startInfo;
                 process.Start();
             }
             catch (Exception e)
             {
-                //Implement some form of logging...
-                return View("Index");
+                return View("Error");
             }
             return View("Voice");
         }
-
     }
 }
