@@ -23,7 +23,7 @@ namespace WebServerRpi.Controllers
             try
             {
                 startInfo.FileName = @"/usr/bin/python";
-                startInfo.Arguments = @"/home/pi/teamSpeak/motorScript.py" + payLoad;
+                startInfo.Arguments = @"/home/pi/teamSpeak/speakerScript.py" + payLoad;
                 process.StartInfo = startInfo;
                 process.Start();
             }
